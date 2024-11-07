@@ -1,0 +1,20 @@
+{
+  // インデントは2
+  "editor.tabSize": 2,
+  // 括弧の対応を色付ける
+  "editor.bracketPairColorization.enabled": true,
+  // 選択行の行番号をハイライトする
+  "editor.renderLineHighlight": "all",
+  // ファイル保存時に自動でフォーマット
+  "editor.formatOnSave": true,
+  // 入力した行を自動でフォーマット
+  "editor.formatOnType": true,
+  // ファイル保存時に行末に改行を挿入
+  "files.insertFinalNewline": true,
+  // ファイル保存時に最終行以降の空行を削除
+  "files.trimFinalNewlines": true,
+  // ファイル保存時に各行の末尾にある半角スペースを削除
+  "files.trimTrailingWhitespace": true,
+  // 自動で保存する
+  "files.autoSave": "onFocusChange"
+}
