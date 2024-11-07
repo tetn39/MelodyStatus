@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+	// usestate
+	const [message, setMessage] = useState("");
+	// localhost:8080/api/v1/helloからデータを取得する axiosを使う
+	// 			setMessage(response.data.message); を追加
+	useEffect(() => {
+		axios.get("http://localhost:8080/api/v1/hello").then((response) => {
+			console.log(response);
+			setMessage(response.data.message);
+		});
+	}, []);
+
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -16,6 +28,7 @@ function App() {
 				>
 					Learn React
 				</a>
+			<div>{message}</div>
 			</header>
 		</div>
 	);

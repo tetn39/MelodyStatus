@@ -10,6 +10,7 @@
 		"@types/node": "^16.18.118",
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.1",
+		"axios": "^1.7.7",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-scripts": "5.0.1",
@@ -25,10 +26,17 @@
 		"check": "biome check --write"
 	},
 	"eslintConfig": {
-		"extends": ["react-app", "react-app/jest"]
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
 	},
 	"browserslist": {
-		"production": [">0.2%", "not dead", "not op_mini all"],
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
 		"development": [
 			"last 1 chrome version",
 			"last 1 firefox version",
