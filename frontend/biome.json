@@ -6,8 +6,8 @@
 		"useIgnoreFile": false
 	},
 	"files": {
-		"ignoreUnknown": false,
-		"ignore": []
+		"ignoreUnknown": true,
+		"ignore": ["tsconfig.node.json", "tsconfig.app.json"]
 	},
 	"formatter": {
 		"enabled": true,
