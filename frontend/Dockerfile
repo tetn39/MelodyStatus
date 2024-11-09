@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-RUN npm run format
+# RUN npm run format
 
 CMD [ "npm", "run", "dev" ]
