@@ -16,5 +16,9 @@
   // ファイル保存時に各行の末尾にある半角スペースを削除
   "files.trimTrailingWhitespace": true,
   // 自動で保存する
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    // tailwindcssのエラー解消
+    "*.css": "tailwindcss"
+  }
 }

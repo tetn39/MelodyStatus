@@ -26,7 +26,7 @@ function App() {
 				>
 					Learn React
 				</a>
-			<div>{message}</div>
+			<div className="text-5xl">{message}</div>
 			</header>
 		</div>
 	);
