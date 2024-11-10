@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
 import { Button } from "@/components/ui/button";
 
 function App() {
@@ -16,11 +15,10 @@ function App() {
 	}, []);
 
 	return (
-		<div className="App">
-			<header className="App-header">
+		<div>
+			<header>
 				<p>MelodyStatus v2</p>
 				<a
-					className="App-link"
 					href="https://reactjs.org"
 					target="_blank"
 					rel="noopener noreferrer"
