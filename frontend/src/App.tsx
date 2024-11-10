@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import { Button } from "@/components/ui/button";
 
 function App() {
 	// usestate
@@ -27,6 +28,7 @@ function App() {
 					Learn React
 				</a>
 			<div className="text-5xl">{message}</div>
+			<Button>Click me</Button>
 			</header>
 		</div>
 	);
