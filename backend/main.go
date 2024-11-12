@@ -13,6 +13,7 @@ func init() {
 	initializers.LoadEnvVariables()
 	initializers.ConnectToDb()
 	initializers.SyncDb()
+	initializers.SpotifyOAuth()
 }
 
 func main() {
@@ -33,6 +34,13 @@ func main() {
 
 	// 音楽データの登録
 	r.POST("/api/v1/musics", controllers.PostMusic)
+
+	// spotify login
+	r.GET("/auth/spotify/login", controllers.GetSpotifyLogin)
+
+	// spotify callback
+	r.GET("/auth/spotify/callback", controllers.GetSpotifyCallback)
+
 	r.Run()
 
 }
