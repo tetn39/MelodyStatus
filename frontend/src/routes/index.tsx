@@ -1,9 +1,15 @@
+import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
+import ('@/index.css')
 
-function App() {
-	// usestate
+export const Route = createFileRoute('/')({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
+  // usestate
 	const [message, setMessage] = useState("");
 	// localhost:8080/api/v1/helloからデータを取得する axiosを使う
 	// 			setMessage(response.data.message); を追加
@@ -31,5 +37,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
