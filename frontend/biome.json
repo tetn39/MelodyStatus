@@ -7,7 +7,16 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"ignore": ["tsconfig.node.json", "tsconfig.app.json"]
+		"ignore": [
+			"*.css",
+			"*.json",
+			"postcss.config.js",
+			"src/components/ui/*",
+			"src/lib/utils.ts",
+			"src/routeTree.gen.ts",
+			"tailwind.config.js",
+			"vite.config.ts"
+		]
 	},
 	"formatter": {
 		"enabled": true,
