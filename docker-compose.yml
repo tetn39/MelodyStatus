@@ -6,7 +6,7 @@ services:
     volumes:
       - ./db/data:/var/lib/postgresql/data
     env_file:
-      - variables.env 
+      - variables.env
     ports:
       - "5432:5432"
 
@@ -29,7 +29,11 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - "3000:3000"
     tty: true
     stdin_open: true
+
+volumes:
+  node_modules:
