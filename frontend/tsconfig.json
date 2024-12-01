@@ -5,6 +5,7 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "strict": true,
     /* ailias設定 */
     "baseUrl": ".",
     "paths": {
