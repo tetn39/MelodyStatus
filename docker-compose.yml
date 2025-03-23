@@ -16,7 +16,7 @@ services:
       context: ./backend/
       dockerfile: Dockerfile
     volumes:
-      - ./backend/:/backend/src/
+      - ./backend/:/go/src/app/
     ports:
       - "8080:8080"
     depends_on:
@@ -32,7 +32,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend:/frontend/src/app
-      - /usr/src/app/node_modules
     ports:
       - "3000:3000"
     tty: true
