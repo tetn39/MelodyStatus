@@ -1,39 +1,47 @@
-version: "3.8"
 services:
   db:
     container_name: melodystatus-postgres
-    image: postgres:latest
+    image: postgres:16
     volumes:
       - ./db/data:/var/lib/postgresql/data
     env_file:
       - variables.env
     ports:
       - "5432:5432"
+    networks:
+      - melodystatus-network
 
   backend:
     build:
       context: ./backend/
       dockerfile: Dockerfile
     volumes:
-      - ./backend/:/go/src/
+      - ./backend/:/backend/src/
     ports:
       - "8080:8080"
     depends_on:
       - db
     tty: true
     stdin_open: true
+    networks:
+      - melodystatus-network
 
   frontend:
     build:
       context: ./frontend/
       dockerfile: Dockerfile
     volumes:
-      - ./frontend:/usr/src/app
+      - ./frontend:/frontend/src/app
       - /usr/src/app/node_modules
     ports:
       - "3000:3000"
     tty: true
     stdin_open: true
+    networks:
+      - melodystatus-network
+
+networks:
+  melodystatus-network:
 
 volumes:
   node_modules:
