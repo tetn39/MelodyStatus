@@ -17,8 +17,11 @@
   "files.trimTrailingWhitespace": true,
   // 自動で保存する
   "files.autoSave": "onFocusChange",
+
   "files.associations": {
     // tailwindcssのエラー解消
     "*.css": "tailwindcss"
-  }
+  },
+  // 音量オフ
+  "editor.accessibilitySupport": "off"
 }
