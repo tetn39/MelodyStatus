@@ -13,6 +13,7 @@ import (
 )
 
 func init() {
+	// MARK: - init関数
 	initializers.LoadEnvVariables()
 	initializers.ConnectToDb()
 	initializers.SyncDb()
@@ -24,6 +25,7 @@ func init() {
 // @license.name tetn39
 // @description MelodyStatusのAPI一覧だよ
 func main() {
+	// MARK: - main関数
 	route := SetupRoutes()
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	fmt.Println("起動しました")
@@ -43,6 +45,7 @@ func main() {
 
 // SetupRoutesはGinのルーティングをセットアップする関数
 func SetupRoutes() *gin.Engine {
+	// MARK: - SetupRoutes関数
 	route := gin.Default()
 
 	// CORS設定

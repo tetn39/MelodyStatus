@@ -1,0 +1,38 @@
+
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "MelodyStatusのAPI一覧だよ",
+        "title": "MelodyStatusのAPI一覧",
+        "contact": {},
+        "license": {
+            "name": "tetn39"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/hello": {
+            "get": {
+                "description": "do ping",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Hello World"
+                ],
+                "summary": "liveness probe",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

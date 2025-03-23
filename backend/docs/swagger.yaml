@@ -1,0 +1,24 @@
+info:
+  contact: {}
+  description: MelodyStatusのAPI一覧だよ
+  license:
+    name: tetn39
+  title: MelodyStatusのAPI一覧
+  version: "1.0"
+paths:
+  /hello:
+    get:
+      consumes:
+      - application/json
+      description: do ping
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: liveness probe
+      tags:
+      - Hello World
+swagger: "2.0"
