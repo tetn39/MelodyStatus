@@ -35,9 +35,19 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/models.HelloStcruct"
                         }
                     }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.HelloStcruct": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
                 }
             }
         }

@@ -1,3 +1,9 @@
+definitions:
+  models.HelloStcruct:
+    properties:
+      message:
+        type: string
+    type: object
 info:
   contact: {}
   description: MelodyStatusのAPI一覧だよ
@@ -17,7 +23,7 @@ paths:
         "200":
           description: OK
           schema:
-            type: string
+            $ref: '#/definitions/models.HelloStcruct'
       summary: hello worldを返す
       tags:
       - Hello World
