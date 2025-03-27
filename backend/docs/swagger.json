@@ -32,14 +32,183 @@
                     }
                 }
             }
+        },
+        "/musics": {
+            "get": {
+                "description": "全ての音楽データを取得する",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Musics"
+                ],
+                "summary": "すべての音楽データを取得する",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.SwaggerMusic"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "音楽データを登録する",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Musics"
+                ],
+                "summary": "音楽データを登録する",
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/models.SwaggerMusic"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/musics/{id}": {
+            "delete": {
+                "description": "{id}の音楽データを削除する",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Musics"
+                ],
+                "summary": "音楽データを削除する",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DeletedResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/models.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ErrorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "models.DeletedResponse": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string"
+                },
+                "memo": {
+                    "type": "string"
+                }
+            }
+        },
         "models.HelloStruct": {
             "type": "object",
             "properties": {
                 "message": {
                     "type": "string"
+                }
+            }
+        },
+        "models.SwaggerMusic": {
+            "type": "object",
+            "properties": {
+                "acousticness": {
+                    "type": "number"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "danceability": {
+                    "type": "number"
+                },
+                "deleted_at": {
+                    "type": "string"
+                },
+                "energy": {
+                    "type": "number"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "instrumentalness": {
+                    "type": "number"
+                },
+                "liveness": {
+                    "type": "number"
+                },
+                "loudness": {
+                    "type": "number"
+                },
+                "mode": {
+                    "type": "number"
+                },
+                "speechiness": {
+                    "type": "number"
+                },
+                "tempo": {
+                    "type": "number"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "valence": {
+                    "type": "number"
                 }
             }
         }

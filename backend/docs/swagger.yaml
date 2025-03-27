@@ -1,8 +1,53 @@
 definitions:
+  models.DeletedResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  models.ErrorResponse:
+    properties:
+      error:
+        type: string
+      memo:
+        type: string
+    type: object
   models.HelloStruct:
     properties:
       message:
         type: string
+    type: object
+  models.SwaggerMusic:
+    properties:
+      acousticness:
+        type: number
+      country:
+        type: string
+      created_at:
+        type: string
+      danceability:
+        type: number
+      deleted_at:
+        type: string
+      energy:
+        type: number
+      id:
+        type: integer
+      instrumentalness:
+        type: number
+      liveness:
+        type: number
+      loudness:
+        type: number
+      mode:
+        type: number
+      speechiness:
+        type: number
+      tempo:
+        type: number
+      updated_at:
+        type: string
+      valence:
+        type: number
     type: object
 info:
   contact: {}
@@ -27,4 +72,70 @@ paths:
       summary: hello worldを返す
       tags:
       - Hello World
+  /musics:
+    get:
+      consumes:
+      - application/json
+      description: 全ての音楽データを取得する
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.SwaggerMusic'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: すべての音楽データを取得する
+      tags:
+      - Musics
+    post:
+      consumes:
+      - application/json
+      description: 音楽データを登録する
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.SwaggerMusic'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: 音楽データを登録する
+      tags:
+      - Musics
+  /musics/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: '{id}の音楽データを削除する'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DeletedResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: 音楽データを削除する
+      tags:
+      - Musics
 swagger: "2.0"

@@ -26,3 +26,33 @@ type Music struct {
 	Valence          float64 `gorm:"not null"`
 	Country          string  `gorm:"not null"`
 }
+
+// Swagger用の定義
+type SwaggerMusic struct {
+	ID               uint    `json:"id"`
+	CreatedAt        string  `json:"created_at"`
+	UpdatedAt        string  `json:"updated_at"`
+	DeletedAt        *string `json:"deleted_at,omitempty"`
+	Acousticness     float64 `json:"acousticness"`
+	Danceability     float64 `json:"danceability"`
+	Energy           float64 `json:"energy"`
+	Instrumentalness float64 `json:"instrumentalness"`
+	Liveness         float64 `json:"liveness"`
+	Loudness         float64 `json:"loudness"`
+	Mode             float64 `json:"mode"`
+	Speechiness      float64 `json:"speechiness"`
+	Tempo            float64 `json:"tempo"`
+	Valence          float64 `json:"valence"`
+	Country          string  `json:"country"`
+}
+
+// ErrorResponse定義
+type ErrorResponse struct {
+	Error string `json:"error"`
+	Memo  string `json:"memo"`
+}
+
+// DeletedResponse定義
+type DeletedResponse struct {
+	Message string `json:"message"`
+}

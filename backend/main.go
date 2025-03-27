@@ -36,6 +36,7 @@ func main() {
 		v1.GET("/hello", controllers.GetHelloWorld)                      // Hello Worldエンドポイント
 		v1.GET("/musics", controllers.GetAllMusics)                      // 音楽データの取得エンドポイント
 		v1.POST("/musics", controllers.PostMusic)                        // 音楽データの登録エンドポイント
+		v1.DELETE("/musics/:id", controllers.DeleteMusic)                // 音楽データの削除エンドポイント
 		v1.GET("/auth/spotify/login", controllers.GetSpotifyLogin)       // Spotifyログインエンドポイント
 		v1.GET("/auth/spotify/callback", controllers.GetSpotifyCallback) // Spotifyコールバックエンドポイント
 	}

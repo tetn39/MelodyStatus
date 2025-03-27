@@ -16,8 +16,8 @@ import (
 // @Success 200 {object} models.HelloStruct
 // @Router /hello [get]
 func GetHelloWorld(c *gin.Context) {
-	var hello models.HelloStruct
-	hello.Message = "Hello World"
-
-	c.JSON(200, hello)
+	// Hello Worldを返す
+	c.JSON(200, models.HelloStruct{
+		Message: "Hello World",
+	})
 }
