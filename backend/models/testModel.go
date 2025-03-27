@@ -1,5 +1,5 @@
 package models
 
-type HelloStcruct struct {
+type HelloStruct struct {
 	Message string `json:"message"`
 }

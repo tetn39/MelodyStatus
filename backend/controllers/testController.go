@@ -5,8 +5,7 @@ import (
 	"github.com/tetn39/MelodyStatus/models"
 )
 
-// @BasePath /api/v1
-
+// GetHelloWorldはHello Worldを返すエンドポイント
 // PingExample godoc
 // @Summary hello worldを返す
 // @Schemes
@@ -14,10 +13,10 @@ import (
 // @Tags Hello World
 // @Accept json
 // @Produce json
-// @Success 200 {object} models.HelloStcruct
+// @Success 200 {object} models.HelloStruct
 // @Router /hello [get]
 func GetHelloWorld(c *gin.Context) {
-	var hello models.HelloStcruct
+	var hello models.HelloStruct
 	hello.Message = "Hello World"
 
 	c.JSON(200, hello)

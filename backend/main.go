@@ -21,7 +21,7 @@ func init() {
 }
 
 // @title MelodyStatusのAPI一覧
-// @version 1.0
+// @version 1
 // @license.name tetn39
 // @description MelodyStatusのAPI一覧だよ
 func main() {

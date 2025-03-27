@@ -1,5 +1,5 @@
 definitions:
-  models.HelloStcruct:
+  models.HelloStruct:
     properties:
       message:
         type: string
@@ -10,7 +10,7 @@ info:
   license:
     name: tetn39
   title: MelodyStatusのAPI一覧
-  version: "1.0"
+  version: "1"
 paths:
   /hello:
     get:
@@ -23,7 +23,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.HelloStcruct'
+            $ref: '#/definitions/models.HelloStruct'
       summary: hello worldを返す
       tags:
       - Hello World

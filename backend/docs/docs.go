@@ -35,7 +35,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.HelloStcruct"
+                            "$ref": "#/definitions/models.HelloStruct"
                         }
                     }
                 }
@@ -43,7 +43,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "models.HelloStcruct": {
+        "models.HelloStruct": {
             "type": "object",
             "properties": {
                 "message": {
@@ -56,7 +56,7 @@ const docTemplate = `{
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "1.0",
+	Version:          "1",
 	Host:             "",
 	BasePath:         "",
 	Schemes:          []string{},
