@@ -2,7 +2,7 @@
 FROM golang:1.23
 
 # 作業ディレクトリの作成
-WORKDIR /backend/src
+WORKDIR /go/src/app
 
 # 依存関係のファイルをコピー
 COPY go.mod go.sum ./
@@ -16,11 +16,14 @@ RUN go install github.com/swaggo/swag/cmd/swag && \
   go install github.com/swaggo/gin-swagger && \
   go install github.com/swaggo/files
 
+# airのインストール
+RUN go install github.com/air-verse/air@latest
+
 # PATHを更新
 ENV PATH=$PATH:/go/bin
 
-# Swaggerドキュメントの生成
-RUN swag init || (echo "swag init failed" && exit 1) && ls -la
+# swaggerの初期化
+RUN swag init
 
-# アプリケーションの実行
-CMD ["go", "run", "main.go"]
+# airの実行
+CMD ["air", "-c", ".air.toml"]

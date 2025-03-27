@@ -7,13 +7,13 @@ import (
 // @BasePath /api/v1
 
 // PingExample godoc
-// @Summary liveness probe
+// @Summary hello worldを返す
 // @Schemes
-// @Description do ping
+// @Description Hello Worldを返すだけのテスト用
 // @Tags Hello World
 // @Accept json
 // @Produce json
-// @Success 200 {string} Helloworld
+// @Success 200 {string} Hello world
 // @Router /hello [get]
 func GetHelloWorld(c *gin.Context) {
 	c.JSON(200, gin.H{

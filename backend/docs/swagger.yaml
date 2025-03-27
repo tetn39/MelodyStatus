@@ -10,7 +10,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: do ping
+      description: Hello Worldを返すだけのテスト用
       produces:
       - application/json
       responses:
@@ -18,7 +18,7 @@ paths:
           description: OK
           schema:
             type: string
-      summary: liveness probe
+      summary: hello worldを返す
       tags:
       - Hello World
 swagger: "2.0"
